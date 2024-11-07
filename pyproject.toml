@@ -1,0 +1,44 @@
+[tool.pyright]
+reportIncompatibleMethodOverride = false
+reportIncompatibleVariableOverride = false
+
+[tool.mypy]
+plugins = ["mypy_django_plugin.main", "mypy_drf_plugin.main"]
+
+[tool.django-stubs]
+django_settings_module = "core.project.settings.local"
+
+[tool.black]
+line-length = 120
+
+[tool.isort]
+profile = "black"
+
+[tool.djlint]
+profile="django"
+blank_line_before_tag="load,extends,include,block"
+blank_line_after_tag="load,extends,include,endblock"
+indent=4
+ignore = "H006,"
+# line_break_after_multiline_tag=true
+close_void_tags=true
+custom_blocks="cache"
+
+[tool.poetry]
+name = "base-template"
+version = "0.1.0"
+description = ""
+authors = ["Roman Ivanov <sitdoff@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+django = "^5.1.3"
+psycopg2-binary = "^2.9.10"
+django-environ = "^0.11.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
