@@ -28,6 +28,10 @@ storages-logs: ## Показать логи Postgres
 app: ## Запуск приложения в контейнере
 		${DC} -f ${APP_FILE} -f ${STORAGES_FILE} ${ENV} up -d
 
+.PHONY: app-rebuild
+app-rebuild: ## Запуск приложения в контейнере с ребилдом контейнера
+		${DC} -f ${APP_FILE} -f ${STORAGES_FILE} ${ENV} up -d --build
+
 .PHONY: app-logs
 app-logs: ## Показать логи приложения в контейнере
 		${LOGS} ${APP_CONTAINER} -f
