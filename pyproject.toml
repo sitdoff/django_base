@@ -1,5 +1,6 @@
 [tool.pyright]
-venvPath = "."
+venvPath = "./"
+venv = ".venv"
 reportIncompatibleMethodOverride = false
 reportIncompatibleVariableOverride = false
 
